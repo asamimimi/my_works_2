@@ -1,0 +1,188 @@
+@charset "UTF-8";
+@use "reset";
+
+// --------
+// base
+// ________
+
+body{
+  font-family: 'Raleway', sans-serif;
+  color: #333;
+  *{
+    box-sizing: border-box;
+  }
+}
+
+a{
+  color: #333;
+  text-decoration: none;
+}
+img{
+  max-width: 100%;
+  vertical-align: bottom;
+}
+ul{
+  list-style: none;
+}
+
+// --------
+// レイアウト
+// ________
+.blContainer{
+  max-width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+// ヘッダー
+
+.siteTitle{
+  text-align:center;
+  padding-top: 45px;
+  padding-bottom: 36px;
+  &__logo{
+    display: block;
+    img{
+      width: 100px;
+    }
+  }
+}
+.menu{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #c3c3c3;
+  padding-bottom: 26px;
+  &__mainList{
+    display: flex;
+    }
+  &__mainItem{
+    a{
+      display: inline-block;
+      margin-right: 14px;
+    }
+  }
+  &__subList{
+    display: flex;
+    li a{
+      margin-left: 14px;
+      display: inline-block;
+    }
+  }
+  }
+  .item{
+    padding: 50px 100px 100px;
+    display: flex;
+    justify-content: center;
+    &__img{
+      flex: 1 1 400px;
+      margin-right: 60px;
+    }
+    &__description{
+      flex: 1 1 336px;
+    }
+  }
+  .itemText{
+    h2{
+      font-size: 1rem;
+      font-weight: bold;
+      padding-top: 1.125em;
+      padding-bottom: 1.125em;
+      border-top: 1px solid #c3c3c3;
+      border-bottom: 1px solid #c3c3c3;
+    }
+    p{
+      padding-top: 20px;
+      padding-bottom: 30px;
+      font-size: 0.75rem;
+      line-height: 1.83;
+    }
+    &__price{
+      font-size: 0.75rem;
+      margin-bottom: 30px;
+    }
+    &__size{
+      font-size: 0.75rem;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      td{
+        text-align: center;
+        padding: 10px 20px;
+        white-space: nowrap;
+        border-right: 1px solid #c3c3c3;
+        border-bottom: 1px solid #c3c3c3;
+        &:nth-of-type(3n){
+          border-right: none;
+        }
+      }
+      tr:last-child{
+        td{
+          border-bottom: none;
+        }
+      }
+    }
+    &__cart{
+      a{
+        display: block;
+        text-align: center;
+        padding: 18px;
+        background-color: #4b4b4b;
+        color: #fff;
+        margin-bottom: 30px;
+      }
+    }
+    &__sizeChart{
+      border: #c3c3c3 1px solid;
+      font-size: .75rem;
+      width: 100%;
+      th{
+        background: #ECEBEB;
+        padding: 10px 20px;
+        text-align: center;
+        border: #c3c3c3 1px solid;
+      }
+      td{
+        border: #c3c3c3 1px solid;
+        padding: 10px 20px;
+        text-align: center;
+        white-space: nowrap;
+      }
+    }
+  }
+  select{
+    width: 184px;
+   font-size: .75rem;
+    padding: 0 10px;
+   text-align: left;
+    border: 1px solid #c3c3c3;
+    -moz-appearance: menulist;
+    -webkit-appearance: menulist;
+  }
+  footer{
+    font-size: 10px;
+    text-align: center;
+  }
+ // --------
+// レスポンシブ
+// ________
+@media screen and(max-width:896px) {
+  .menu{
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+    &__subList{
+      margin-top: 10px;
+    }
+  }
+  .item{
+    flex-direction: column;
+    padding: 0;
+    &__img{
+      margin-right: 0;
+    }
+    &__description{
+      padding: 0 5px;
+      margin-top: 10px;
+      margin-bottom: 100px;
+    }
+  }
+}
